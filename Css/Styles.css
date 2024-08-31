@@ -1,0 +1,41 @@
+.juego {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 1px solid black;
+  }
+  
+  .personaje {
+    position: absolute;
+    top: 100;
+    left: 100px;
+    width: 90px;
+    height: 120px;
+  }
+  
+  .plataforma1 {
+    position: absolute;
+    top: 500px;
+    left: 0px;
+    width: 700px;
+    height: 20px;
+    background-color: green;
+  }
+  
+  .plataforma2 {
+    position: absolute;
+    top: 400px;
+    left: 200px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(99, 99, 99);
+  }
+  
+  .plataforma3 {
+    position: absolute;
+    top: 400px;
+    left: 600px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(99, 99, 99);
+  }
