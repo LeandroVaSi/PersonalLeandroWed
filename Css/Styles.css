@@ -1,3 +1,227 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+.imagenResponsiva img{
+  width: 50%;
+  height: auto;
+  max-width: 50%;
+  display: grid;
+  margin: auto;
+}
+.imagen-responsiva {
+  max-width: 50%;
+  overflow: hidden; 
+}
+.cuerpo {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #333;
+  margin-bottom: 20px;
+}
+
+#menu ul {
+  display: contents;
+}
+
+#menu li {
+  list-style-type: none;
+}
+
+#menu li a {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#menu li a:hover {
+  background-color: #555;
+}
+
+/* Estilo para el encabezado */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+/* Estilo para las secciones */
+#Presentacion, #habilidades, #proyectos, #contacto {
+  margin-bottom: 40px;
+}
+
+#Presentacion h2, #habilidades h2, #proyectos h2, #contacto h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Estilo para la presentación del juego */
+.juego {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.juego .personaje img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.plataforma1, .plataforma2, .plataforma3 {
+  height: 50px;
+  background-color: #ccc;
+}
+
+/* Estilo para la sección de habilidades */
+#habilidades ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+}
+
+#habilidades li {
+  background-color: #eee;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  list-style-type: none;
+}
+
+/* Estilo para la sección de proyectos */
+.proyecto {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fafafa;
+  margin-bottom: 20px;
+}
+
+.proyecto h3 {
+  margin-top: 0;
+}
+
+/* Estilo para la sección de contacto */
+#contacto p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+#contacto a {
+  color: #333;
+  text-decoration: none;
+}
+
+#contacto a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos Responsivos */
+/* Dispositivos Móviles */
+@media (max-width: 600px) {
+  #menu {
+      grid-template-columns: 1fr; /* Una columna en móviles */
+  }
+
+
+  header h1 {
+      font-size: 1.8em;
+  }
+  .imagen-responsiva img {
+    width: 100%; /* La imagen ocupará todo el ancho del contenedor en pantallas pequeñas */
+}
+
+  header p {
+      font-size: 1em;
+  }
+
+  .juego {
+      grid-template-columns: 1fr; /* Una columna para el juego */
+  }
+
+  #habilidades ul {
+      flex-direction: column; /* Alinear habilidades en columna */
+  }
+
+  .proyecto {
+      padding: 10px;
+  }
+
+  #contacto p {
+      font-size: 1em;
+  }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  #menu {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
+  }
+  .imagen-responsiva img {
+    width: 80%; /* La imagen ocupará el 80% del contenedor en pantallas medianas */
+}
+
+  header h1 {
+      font-size: 2.2em;
+  }
+
+  .juego {
+      grid-template-columns: 1fr 1fr; /* Dos columnas para el juego */
+  }
+
+  #habilidades ul {
+      flex-direction: row;
+  }
+}
+
+/* Computadoras */
+@media (min-width: 901px) {
+  #menu {
+      grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en computadoras */
+  }
+  .imagen-responsiva img {
+    width: 60%; /* La imagen ocupará el 60% del contenedor en pantallas grandes */
+}
+
+  .juego {
+      grid-template-columns: 1fr 1fr 1fr; /* Tres columnas para el juego */
+  }
+
+  #habilidades ul {
+      flex-direction: row;
+  }
+}
+
+
 .juego {
     position: relative;
     width: 800px;
