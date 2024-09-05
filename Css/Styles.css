@@ -1,35 +1,40 @@
-
 body {
   font-family: Arial, sans-serif;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
   color: #333;
 }
-.imagenResponsiva img{
-  width: 50%;
+
+.imagenResponsiva img {
+  width: 30%;
   height: auto;
-  max-width: 50%;
+  max-width: 40%;
   display: grid;
   margin: auto;
+
 }
+
 .imagen-responsiva {
   max-width: 50%;
-  overflow: hidden; 
+  overflow: hidden;
 }
+
 .cuerpo {
-  max-width: 1200px;
+  max-width: auto;
   margin: auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #menu {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background-color: #333;
+  grid-template-columns: auto;
+  background-color: #007FFF;
   margin-bottom: 20px;
+  position: relative;
 }
 
 #menu ul {
@@ -50,10 +55,9 @@ body {
 }
 
 #menu li a:hover {
-  background-color: #555;
+  background-color: #89CFF0;
 }
 
-/* Estilo para el encabezado */
 header {
   text-align: center;
   margin-bottom: 40px;
@@ -69,39 +73,83 @@ header p {
   color: #666;
 }
 
-/* Estilo para las secciones */
-#Presentacion, #habilidades, #proyectos, #contacto {
+##Presentacion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   margin-bottom: 40px;
 }
 
-#Presentacion h2, #habilidades h2, #proyectos h2, #contacto h2 {
+#Presentacion h2 {
+  text-align: center;
   font-size: 2em;
   margin-bottom: 20px;
   color: #444;
 }
 
-/* Estilo para la presentación del juego */
-.juego {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 20px;
+#Presentacion p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
 }
 
-.juego .personaje img {
-  max-width: 100%;
+#Presentacion img {
+  max-width: 40%;
   height: auto;
-  display: block;
-  margin: auto;
+  margin-left: 20px;
+  align-self: flex-end;
 }
 
-.plataforma1, .plataforma2, .plataforma3 {
-  height: 50px;
-  background-color: #ccc;
+.alternado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-/* Estilo para la sección de habilidades */
+.alternado img {
+  max-width: 40%;
+  height: auto;
+}
+
+.alternado:nth-child(even) img {
+  order: 2;
+}
+
+.alternado:nth-child(odd) img {
+  order: 1;
+}
+
+@media (max-width: 600px) {
+  .alternado {
+    flex-direction: column;
+  }
+
+  .alternado img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+
+#Presentacion,
+#habilidades,
+#proyectos,
+#contacto {
+  margin-bottom: 40px;
+}
+
+#Presentacion h2,
+#habilidades h2,
+#proyectos h2,
+#contacto h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #444;
+}
+
 #habilidades ul {
   display: flex;
   flex-wrap: wrap;
@@ -110,19 +158,33 @@ header p {
 }
 
 #habilidades li {
-  background-color: #eee;
+  background-color: #89CFF0;
   padding: 10px 20px;
   margin: 10px;
   border-radius: 5px;
   list-style-type: none;
+  display: flex;
+  align-items: center;
 }
 
-/* Estilo para la sección de proyectos */
+#habilidades li img {
+  width: 40px;
+  height: auto;
+  margin-left: 10px;
+}
+
+#habilidades h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #444;
+}
+
 .proyecto {
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #4169E1;
   border-radius: 5px;
-  background-color: #fafafa;
+  background-color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -130,10 +192,33 @@ header p {
   margin-top: 0;
 }
 
-/* Estilo para la sección de contacto */
+#contacto {
+  display: flex;
+  flex-direction: column;
+  background-color: #007FFF;
+  text-align: center;
+  margin-bottom: 48px;
+
+}
+
+#contacto h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #444;
+}
+
 #contacto p {
   font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 10px 0;
+}
+
+#contacto p img {
+  width: 50px;
+  height: auto;
+  margin-left: 10px;
 }
 
 #contacto a {
@@ -145,121 +230,71 @@ header p {
   text-decoration: underline;
 }
 
-/* Estilos Responsivos */
-/* Dispositivos Móviles */
+
 @media (max-width: 600px) {
   #menu {
-      grid-template-columns: 1fr; /* Una columna en móviles */
+    grid-template-columns: 1fr;
   }
 
 
   header h1 {
-      font-size: 1.8em;
+    font-size: 1.8em;
   }
+
   .imagen-responsiva img {
-    width: 100%; /* La imagen ocupará todo el ancho del contenedor en pantallas pequeñas */
-}
+    width: 100%;
+  }
 
   header p {
-      font-size: 1em;
-  }
-
-  .juego {
-      grid-template-columns: 1fr; /* Una columna para el juego */
+    font-size: 1em;
   }
 
   #habilidades ul {
-      flex-direction: column; /* Alinear habilidades en columna */
+    flex-direction: column;
   }
 
   .proyecto {
-      padding: 10px;
+    padding: 10px;
   }
 
   #contacto p {
-      font-size: 1em;
+    font-size: 1em;
   }
 }
 
-/* Tablets */
+
 @media (min-width: 601px) and (max-width: 900px) {
   #menu {
-      grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
+
   .imagen-responsiva img {
-    width: 80%; /* La imagen ocupará el 80% del contenedor en pantallas medianas */
-}
+    width: 80%;
+  }
 
   header h1 {
-      font-size: 2.2em;
+    font-size: 2.2em;
   }
 
-  .juego {
-      grid-template-columns: 1fr 1fr; /* Dos columnas para el juego */
-  }
+
 
   #habilidades ul {
-      flex-direction: row;
+    flex-direction: row;
   }
 }
 
-/* Computadoras */
+
 @media (min-width: 901px) {
   #menu {
-      grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en computadoras */
+    grid-template-columns: repeat(4, 1fr);
   }
-  .imagen-responsiva img {
-    width: 60%; /* La imagen ocupará el 60% del contenedor en pantallas grandes */
-}
 
-  .juego {
-      grid-template-columns: 1fr 1fr 1fr; /* Tres columnas para el juego */
+  .imagen-responsiva img {
+    width: 60%;
   }
+
 
   #habilidades ul {
-      flex-direction: row;
+    flex-direction: row;
   }
 }
-
-
-.juego {
-    position: relative;
-    width: 800px;
-    height: 600px;
-    border: 1px solid black;
-  }
-  
-  .personaje {
-    position: absolute;
-    top: 100;
-    left: 100px;
-    width: 90px;
-    height: 120px;
-  }
-  
-  .plataforma1 {
-    position: absolute;
-    top: 500px;
-    left: 0px;
-    width: 700px;
-    height: 20px;
-    background-color: green;
-  }
-  
-  .plataforma2 {
-    position: absolute;
-    top: 400px;
-    left: 200px;
-    width: 100px;
-    height: 100px;
-    background-color: rgb(99, 99, 99);
-  }
-  
-  .plataforma3 {
-    position: absolute;
-    top: 400px;
-    left: 600px;
-    width: 100px;
-    height: 100px;
-    background-color: rgb(99, 99, 99);
-  }
